@@ -1,13 +1,16 @@
+#####################################################################
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+#####################################################################
 
 #####################################################################
+#announcements
 def announcements(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
     }
     return render(request, 'ndmu/announcements.html', context)
 
@@ -64,9 +67,18 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 		return False
 
 ####################################################################
+#about
 def about(request):
     return render(request, 'ndmu/about.html')
 
+def history(request):
+	return render(request, 'ndmu/history.html', {'title': 'History'})
+
+def contact(request):
+	return render(request, 'ndmu/contact.html')
+####################################################################
+#home
 def home(request):
 	return render(request, 'ndmu/home.html')
+
 

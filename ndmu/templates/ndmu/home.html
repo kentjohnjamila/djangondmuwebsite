@@ -1,7 +1,12 @@
 {% extends "ndmu/base.html" %}
+{% load static %}
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8">
 {% block content %}
-	<img src="">
-	<h1><center>Welcome to Notre Dame of Marbel University Home Page</center></h1>
-	<h2><center>Check the <a href="{% url 'ndmu-announcements' %}">Announcements</a></center></h2>
-	<h2><center>Check the <a href="{% url 'ndmu-about' %}">About Page</a></center></h2>
+  <div class="text-center">
+    <img src="{% static 'images/ndmu.png' %}" alt="Bird" class="img-circle">
+    <h3>Notre Dame of Marbel University</h3>    
+    <h5>Senior High School Department</h5>
+  </div>
 {% endblock content %}

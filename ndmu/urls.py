@@ -1,8 +1,9 @@
+#####################################################################
 from django.urls import path
 from . import views
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView
 from django.views.generic.base import RedirectView
-
+#####################################################################
 
 urlpatterns = [
 	#home tab
@@ -10,6 +11,8 @@ urlpatterns = [
 	#########################################################################
 	#about tab
     path('about/', views.about, name='ndmu-about'),
+	path('about/history/', views.history, name='ndmu-history'),
+	path('about/contact/', views.contact, name='ndmu-contact'),
     #########################################################################
     #announcements tab
 	path('announcements/post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
