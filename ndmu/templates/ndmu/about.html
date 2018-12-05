@@ -1,8 +1,17 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
+	<br>
+	<font size="6px">About NDMU</font>
 	<p></p>
-	<h1>About NDMU</h1>
+	<font size="4px">
 	<ul>
-		<h3><li><a style="color: #008000;" class="entry-title main_title" href="{% url 'ndmu-history' %}"><strong>History</strong></a></li></h3>
+		<li><a style="color: #008000;text-decoration:none;" class="entry-title main_title" href="{% url 'ndmu-trustees' %}"><strong><font size="4px">Board of Trustees</strong></a></li>
 	</ul>	
+	<ul>
+		<li><a style="color: #008000;text-decoration:none;" class="entry-title main_title" href="{% url 'ndmu-administration' %}"><strong><font size="4px">Administration</strong></a></li>
+	</ul>			
+	<ul>
+		<li><a style="color: #008000;text-decoration:none;" class="entry-title main_title" href="{% url 'ndmu-history' %}"><strong><font size="4px">History</strong></a></li>
+	</ul>	
+</font>
 {% endblock content %}

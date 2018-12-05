@@ -76,6 +76,12 @@ def history(request):
 
 def contact(request):
 	return render(request, 'ndmu/contact.html')
+
+def trustees(request):
+	return render(request, 'ndmu/trustees.html', {'title': 'Board of Trustees'})
+
+def administration(request):
+	return render(request, 'ndmu/administration.html', {'title': 'Administration'})
 ####################################################################
 #home
 def home(request):

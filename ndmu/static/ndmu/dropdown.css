@@ -1,5 +1,5 @@
 .dropbtn {
-    background-color: #0b6623;
+    background-color: red;
     color: #cbd5db;
     padding: 0px;
     font-size: 16px;
@@ -14,11 +14,11 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #0b6623;
-    min-width: 100px;
+    background-color: red;
+    min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border: 2px solid black;   
+    border: 2px solid red;   
 }
 
 .dropdown-content a {
@@ -32,5 +32,5 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #0b6623;}
+.dropdown:hover .dropbtn {background-color: red;}
 

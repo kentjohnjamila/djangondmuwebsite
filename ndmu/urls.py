@@ -13,6 +13,8 @@ urlpatterns = [
     path('about/', views.about, name='ndmu-about'),
 	path('about/history/', views.history, name='ndmu-history'),
 	path('about/contact/', views.contact, name='ndmu-contact'),
+	path('about/board-of-trustees/', views.trustees, name='ndmu-trustees'),
+	path('about/administration/', views.administration, name='ndmu-administration'),
     #########################################################################
     #announcements tab
 	path('announcements/post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
