@@ -19,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'ndmu/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'ndmu/sidebar.css' %}">
 
 	<!-- Title -->
 	{% if title %}
@@ -29,7 +28,7 @@
 	{% endif %}
 
 </head>
-<body>
+<body background="{% static 'images/ndmu.png' %}">
 	<!-- Sidebar -->
 	<header class="site-header">
 	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
@@ -66,7 +65,8 @@
 	          <a class="nav-item nav-link" href="{% url 'ndmu-about' %}">About</a>
 	          <a class="nav-item nav-link" href="{% url 'ndmu-home' %}">Home</a>
 	          <a class="nav-item nav-link" href="{% url 'ndmu-announcements' %}">Announcements</a>
-	          <a class="nav-item nav-link" href="{% url 'ndmu-contact' %}">Contact Us</a>	          	         
+	          <a class="nav-item nav-link" href="{% url 'ndmu-contact' %}">Contact Us</a>	 
+	          <a class="nav-item nav-link" href="{% url 'ndmu-teachers' %}">SHS-Teachers</a>	     	                   	         
 	        </div>
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav">
@@ -92,6 +92,14 @@
       </div>
     </main>   
 
+<center>
+    <footer class="footer">
+      <div>
+        <p class="text-muted">Copyright&copy; 2018 Notre Dame of Marbel University | Senior High School Department</p>
+      </div>
+    </footer>
+</center>
+
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -110,7 +118,13 @@
     	document.body.style.backgroundColor = "white";
 }
 </script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 </html>

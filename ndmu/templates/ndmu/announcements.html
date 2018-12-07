@@ -1,8 +1,12 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
-	{% if user.is_authenticated %}
-	    <center><h5>To post a new announcement - Go to the control center</h5></center>		          
-	{% endif %}
+{% load static %}
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Announcements</h1>
+          <p class="lead text-muted">Note that everything here is 100 percent guaranteed legitimate.</p>
+        </div>
+      </section>
 	{% for post in posts %}
 	<article class="media content-section">
 		<img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">

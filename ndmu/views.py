@@ -82,6 +82,9 @@ def trustees(request):
 
 def administration(request):
 	return render(request, 'ndmu/administration.html', {'title': 'Administration'})
+
+def teachers(request):
+	return render(request, 'ndmu/teachers.html', {'title': 'SHS teachers'})
 ####################################################################
 #home
 def home(request):

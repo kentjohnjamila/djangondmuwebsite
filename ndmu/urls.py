@@ -26,4 +26,6 @@ urlpatterns = [
     #user tag
 	path('user/<username>', UserPostListView.as_view(), name='user-posts'),
 	#########################################################################
+	#teacher tag
+	path('shs-teachers/', views.teachers, name='ndmu-teachers'),
 ]
