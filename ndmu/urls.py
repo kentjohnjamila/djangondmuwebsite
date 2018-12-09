@@ -7,7 +7,8 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
 	#home tab
-	path('', views.home, name='ndmu-home'),
+	path('home/', views.home, name='ndmu-home'),
+	path('', views.superhome, name="ndmu-superhome"),
 	#########################################################################
 	#about tab
     path('about/', views.about, name='ndmu-about'),
@@ -22,6 +23,7 @@ urlpatterns = [
 	path('announcements/post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
 	path('announcements/new/', PostCreateView.as_view(), name='post-create'),
     path('announcements/',  PostListView.as_view(), name='ndmu-announcements'),
+
     #########################################################################
     #user tag
 	path('user/<username>', UserPostListView.as_view(), name='user-posts'),

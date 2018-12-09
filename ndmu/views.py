@@ -2,24 +2,24 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.contrib import messages
 from .models import Post
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django_filters import rest_framework as filters
+from django.db.models import Q
+from django.shortcuts import redirect
+from .forms import PostForm
 #####################################################################
 
 #####################################################################
 #announcements
-def announcements(request):
-    context = {
-        'posts': Post.objects.all(),
-    }
-    return render(request, 'ndmu/announcements.html', context)
-
 class PostListView(ListView):
 	model = Post
 	template_name = 'ndmu/announcements.html'
 	context_object_name = 'posts'
 	ordering = ['-date_posted']
 	paginate_by = 5
+
 
 class UserPostListView(ListView):
 	model = Post
@@ -36,7 +36,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
 	model = Post
-	fields = ['title', 'content', 'image_content']
+	fields = ['title', 'content', 'imgs']
 
 	def form_valid(self, form):
 		form.instance.author = self.request.user
@@ -44,7 +44,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Post
-	fields = ['title', 'content']
+	template_name = 'ndmu/edit_post.html'
+	fields = ['title', 'content', 'imgs']
 
 	def form_valid(self, form):
 		form.instance.author = self.request.user
@@ -69,7 +70,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 ####################################################################
 #about
 def about(request):
-    return render(request, 'ndmu/about.html')
+	return render(request, 'ndmu/about.html')
 
 def history(request):
 	return render(request, 'ndmu/history.html', {'title': 'History'})
@@ -90,4 +91,8 @@ def teachers(request):
 def home(request):
 	return render(request, 'ndmu/home.html')
 
+def superhome(request):
+	return render(request, 'ndmu/superhomepage.html')
 
+def admin(request):
+	return render(request, '/admin/login/?next=/admin/')

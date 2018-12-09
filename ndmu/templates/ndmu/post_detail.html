@@ -1,5 +1,6 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
+<br>
 	<article class="media content-section">
 		<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
 		<div class="media-body">
@@ -8,8 +9,16 @@
 			<small class="text-muted">{{ object.date_posted|date:"M. j, Y - fA" }}</small>
 		  </div>
 		  <h2><a class="article-title"><strong>{{ object.title }}</strong></h2>
-		  <p class="article-content">{{ object.content }}</p>
+		  {% if post.picture %}		  
+		  <img src={{object.image_content.url}}/>
+		  {% endif %}		  	
+		  <p class="article-content">{{ object.content | safe }}</p>
+		  {% if object.imgs %}
+		  <img style="height:725px;max-width:500px;width: expression(this.width > 500 ? 500: true);" src="{{ object.imgs.url }}" alt="{{ object.title }} style="width:100%" onclick="currentSlide(1)"/>
+		  {% endif %}
 		  {% if object.author == user %}
+		  <br>
+		  <br>
 		  <div>
 			<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
 			<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>	
@@ -17,4 +26,25 @@
 		  {% endif %}	
 		</div>
 	</article>
+
+<div id="share-buttons">
+    <p> Share this on:</p>
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=<link>" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    
+    <!-- Google+ -->
+    <a href="https://plus.google.com/share?url=<link>"" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+    </a>
+
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=<link>"" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+   
+
+</div>
+
 {% endblock content %}

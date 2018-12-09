@@ -10,7 +10,7 @@
 			<small class="text-muted">{{ post.date_posted|date:"M. j, Y - fA" }}</small>				
 		  </div>
 		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-		  <p class="article-content">· {{ post.content }}</p>
+		  <p class="article-content">{{ post.content | safe }}</p>
 		</div>
 	  </article>
 	{% endfor %}

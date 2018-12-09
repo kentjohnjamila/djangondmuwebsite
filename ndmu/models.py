@@ -3,13 +3,15 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from PIL import Image
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
+    title = models.CharField(max_length=100, default=False)
+    #content = RichTextField(blank=True, null=True)
+    content = RichTextUploadingField(blank=True, null=True)    
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image_content = models.FileField(upload_to='content_images', null=True, blank=True)
+    imgs = models.ImageField(upload_to='imgs/%Y/%m/%d/', max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.title

@@ -42,28 +42,26 @@
 						<br>
 						<center><img class="rounded-circle mb-2" src="{{ user.profile.image.url }}" height="50" width="50">
 						<p><font color="white"><i><strong>{{ user.username }}</strong></i></p></font></center>
-						<p><center><font color="white">____________________</font></center></p>
+						<hr style="border-color:red;">
 						<a class="nav-item nav-link" href="{% url 'profile' %}">Profile Information</a>
 						<a class="nav-item nav-link" href="{% url 'post-create' %}">Post Announcement</a>						
-						<a class="nav-item nav-link" href="admin">Admin Page</a>
 						<a class="nav-item nav-link" href="{% url 'logout' %}"><font color="red">Logout</font></a>
-						<p><center><font color="white">____________________</font></center></p>						
+						<hr style="border-color:red;">						
 					</div>		
 					<div id="main">
 						{% if user.is_authenticated %}
 						<span style="font-size:20px;cursor:pointer;color:white" onclick="openNav()">&#9776; {{ user }}</span>
 						{% endif %}						
-					</div>
-					
+					</div>		
 	    <div class="container">
-	      <a class="navbar-brand mr-4" href="/"><img src="{% static 'images/ndmu.png' %}" height="50" width="50">&nbsp;&nbsp;Notre Dame of Marbel University&nbsp;&nbsp;|</a>
+	      <a class="navbar-brand mr-4" href="{% url 'ndmu-home' %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'images/ndmu.png' %}" height="50" width="50">&nbsp;&nbsp;Notre Dame of Marbel University&nbsp;&nbsp;|</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	      </button>
 	      <div class="collapse navbar-collapse" id="navbarToggle">
 	        <div class="navbar-nav mr-auto">
+	          <a class="nav-item nav-link" href="{% url 'ndmu-home' %}">Home</a>	        	
 	          <a class="nav-item nav-link" href="{% url 'ndmu-about' %}">About</a>
-	          <a class="nav-item nav-link" href="{% url 'ndmu-home' %}">Home</a>
 	          <a class="nav-item nav-link" href="{% url 'ndmu-announcements' %}">Announcements</a>
 	          <a class="nav-item nav-link" href="{% url 'ndmu-contact' %}">Contact Us</a>	 
 	          <a class="nav-item nav-link" href="{% url 'ndmu-teachers' %}">SHS-Teachers</a>	     	                   	         
@@ -71,11 +69,16 @@
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav">
 	        	<div class="btn-group">
+	   <div class="btn-group">
 
+</div>     		
 	        </div>
 	      </div>
 	    </div>
-	  </nav>
+	</div>	
+	<font color="white" size="2px"><img src="{% static 'images/phone.png' %}" height="20" width="20">&nbsp;(083) 228 3598<br><img src="{% static 'images/email.png' %}" height="20" width="20">&nbsp;ndmu1946@gmail.com</font>
+
+	  </nav>  
 	</header>
 	<main role="main" class="container">
 	  <div class="row">
@@ -95,7 +98,7 @@
 <center>
     <footer class="footer">
       <div>
-        <p class="text-muted">Copyright&copy; 2018 Notre Dame of Marbel University | Senior High School Department</p>
+        <p class="text-muted"><font style="font-family:arial; font-size: 12px;" color="white">Copyright&copy; 2018 Notre Dame of Marbel University | Senior High School Department</font></p>
       </div>
     </footer>
 </center>
@@ -125,6 +128,7 @@
     <script src="https://getbootstrap.com/docs/3.3/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+
 
 </body>
 </html>

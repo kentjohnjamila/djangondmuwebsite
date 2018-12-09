@@ -1,9 +1,11 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
+<hr class="featurette-divider">
 	<h2>Logged out</h2>
 	<div class="border-top pt-3">
 		<small class="text-muted">
 			<a href="{% url 'login' %}">Log In Again</a>
 		</small>
 	</div>
+	<hr class="featurette-divider">
 {% endblock content %}

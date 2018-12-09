@@ -1,12 +1,14 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
-{% load static %}
+<hr class="featurette-divider">
+    <main role="main">
+
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Announcements</h1>
-          <p class="lead text-muted">Note that everything here is 100 percent guaranteed legitimate.</p>
+          <h1 class="jumbotron-heading">Announcements</font></h1>
         </div>
       </section>
+<br>
 	{% for post in posts %}
 	<article class="media content-section">
 		<img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
@@ -15,9 +17,11 @@
 			<a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>		
 			<small class="text-muted">{{ post.date_posted|date:"M. j, Y - fA" }}</small>				
 		  </div>
-		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}"><strong>{{ post.title }}</strong></a></h4>		  
-		  <p class="article-content">{{ post.content }}</p>
-		  <img src="{{ post.content.image_content.url }}"" class="img-responsive" alt="{{ post.title }}">
+		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}"><strong>{{ post.title }}</strong></a></h4>
+		  <p class="article-content">{{ post.content | safe }}</p>
+		  {% if post.imgs %}
+		  	<img style="height:725px;max-width:500px;width: expression(this.width > 500 ? 500: true);" src="{{ post.imgs.url }}" alt="{{ post.title }}"/>
+		  {% endif %}
 		</div>
 	  </article>
 	{% endfor %}
