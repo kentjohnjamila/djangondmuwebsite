@@ -1,4 +1,6 @@
 # djangondmuwebsite
 
 crispy forms -
-pillow
+pillow - 
+ckeditor -
+
