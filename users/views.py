@@ -19,6 +19,9 @@ def register(request):
 
 @login_required
 def profile(request):
+    return render(request, 'users/profile.html')
+
+def profileedit(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -39,4 +42,4 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request,'users/profile_update.html', context)

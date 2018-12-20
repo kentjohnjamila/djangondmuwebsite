@@ -1,32 +1,33 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
+</style>
 <hr class="featurette-divider">
-    <main role="main">
-
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Announcements</font></h1>
+          <h1 class="jumbotron-heading">Announcements</h1>
+		  <p>A list of announcement threads - click them to read more!</p>          
         </div>
       </section>
 <br>
+    <main role="main">
+
 	{% for post in posts %}
 	<article class="media content-section">
-		<img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+		<img class="media-object article-img rounded-circle" src="{{ post.author.profile.image.url }}">
 		<div class="media-body">
-		  <div class="article-metadata">
-			<a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>		
-			<small class="text-muted">{{ post.date_posted|date:"M. j, Y - fA" }}</small>				
+		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}"><strong><font style="font-family: monsterratimport;">{{ post.title | safe }}</font></strong></a></h4>  	
+		  <!--p class="article-content">{{ post.content | safe }}</p>-->
+		  <div class="article">
+			<a class="mr-2" href="{% url 'user-posts' post.author.username %}"><font color="red" style="font-family: monsterratimport;">{{ post.author }}</font></a>		
+			<a class="article-title" href="{% url 'post-detail' post.id %}"><small class="text-muted"><i><font style="font-family: monsterratimport;">Posted on {{ post.date_posted|date:"M. j, Y - fA" }}</font></small></a></i>
 		  </div>
-		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}"><strong>{{ post.title }}</strong></a></h4>
-		  <p class="article-content">{{ post.content | safe }}</p>
-		  {% if post.imgs %}
-		  	<img style="height:725px;max-width:500px;width: expression(this.width > 500 ? 500: true);" src="{{ post.imgs.url }}" alt="{{ post.title }}"/>
-		  {% endif %}
 		</div>
+		<a class="btn btn-outline-success btn-sm mt-1 mb-1" href="{% url 'post-detail' post.id %}"><font style="font-family: monsterratimport;">Open Post</font></a>
 	  </article>
 	{% endfor %}
+	<hr class="featurette-divider">
 	{% if is_paginated %}
-
+	<center>
 		{% if page_obj.has_previous %}
 			<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
 			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}"><</a>
@@ -44,7 +45,6 @@
 			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">></a>
 			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
 		{% endif %}
-
-
+	</center>
 	{% endif %}
 {% endblock content %}

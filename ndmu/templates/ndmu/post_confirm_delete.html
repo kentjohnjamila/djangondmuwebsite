@@ -6,7 +6,7 @@
 			{% csrf_token %}
 			<fieldset class="form-group">
 				<legend class="border-bottom mb-4">Delete Announcement</legend>
-				<h3>Delete the post "{{ object.title }}"?</h3>
+				<h3>Delete the post "{{ object.title | safe }}"?</h3>
 			</fieldset>
 			<div class="form-group">
 				<button class="btn btn-outline-danger" type="submit">Yes</button>

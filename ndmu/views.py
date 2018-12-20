@@ -9,6 +9,9 @@ from django_filters import rest_framework as filters
 from django.db.models import Q
 from django.shortcuts import redirect
 from .forms import PostForm
+from django.urls import reverse_lazy
+from django.utils.safestring import mark_safe
+import json
 #####################################################################
 
 #####################################################################
@@ -36,7 +39,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
 	model = Post
-	fields = ['title', 'content', 'imgs']
+	fields = ['title', 'content']
 
 	def form_valid(self, form):
 		form.instance.author = self.request.user
@@ -45,7 +48,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Post
 	template_name = 'ndmu/edit_post.html'
-	fields = ['title', 'content', 'imgs']
+	fields = ['title', 'content']
 
 	def form_valid(self, form):
 		form.instance.author = self.request.user
@@ -59,7 +62,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Post
-	success_url = '/'
+	success_url = reverse_lazy('ndmu-announcements')
 
 	def test_func(self):
 		post = self.get_object()
@@ -93,6 +96,6 @@ def home(request):
 
 def superhome(request):
 	return render(request, 'ndmu/superhomepage.html')
-
-def admin(request):
-	return render(request, '/admin/login/?next=/admin/')
+####################################################################\
+def whatsnew(request):
+	return render(request, 'ndmu/whats_new.html')

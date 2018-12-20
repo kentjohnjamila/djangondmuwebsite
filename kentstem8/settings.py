@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'ndmu.apps.NDMUConfig',
     'crispy_forms',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -44,18 +45,33 @@ INSTALLED_APPS = [
     'django_filters',
     'ckeditor',
     'ckeditor_uploader',
+    'whatsnew',
 ]
+
+WSGI_APPLICATION = 'kentstem8.wsgi.application'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'config.image_previewText': '',
         'toolbar': 'Custom',
+        'width': 1060,
+        'height': 500,
         'toolbar_Custom': [
-            ['Bold', 'Italic','Underline', 'TextColor', 'BGColor', 'FontSize', 'Font', 'Link', 'Unlink',
-            'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'NumberedList', 'BulletedList', 'Smiley', 'Image',
-            'Outdent', 'Indent', 'Source', 'Undo', 'Redo'],
-        ]
+            ['Bold', 'Italic','Underline',], ['TextColor', 'BGColor', 'FontSize', 'Font'], ['Link', 'Unlink'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight'], ['NumberedList', 'BulletedList'], ['Smiley', 'Image',
+            'Outdent', 'Indent', 'Source'], ['Undo', 'Redo'],
+        ],
+    },
+    'title_editor': {
+        'toolbar': 'Title',
+        'width': 1060,
+        'height': 80,        
+        'toolbar_Title': [
+        ['Bold', 'Underline', 'TextColor', 'Link', 'Unlink',
+        'Undo', 'Redo'],
+        ],
     }
 }
 
@@ -86,8 +102,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'kentstem8.wsgi.application'
 
 
 REST_FRAMEWORK = {
@@ -142,7 +156,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = 'static'
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'

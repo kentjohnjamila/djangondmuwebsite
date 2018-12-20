@@ -1,11 +1,18 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
-<hr class="featurette-divider">
-	<h2>Logged out</h2>
-	<div class="border-top pt-3">
+{% load static %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+	<img class="mb-4" src="{% static 'images/logout.png' %}">
+	<p>You Have Been Logged Out</p>
+<br>
 		<small class="text-muted">
-			<a href="{% url 'login' %}">Log In Again</a>
+			Please <a href="{% url 'login' %}">click here</a> to login back to our site
 		</small>
-	</div>
-	<hr class="featurette-divider">
+</center>
 {% endblock content %}

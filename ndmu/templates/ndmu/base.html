@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'ndmu/main.css' %}">
-
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
 	<!-- Title -->
 	{% if title %}
 		<title>NDMU - {{ title }}</title>
@@ -28,7 +28,8 @@
 	{% endif %}
 
 </head>
-<body background="{% static 'images/ndmu.png' %}">
+<body>
+
 	<!-- Sidebar -->
 	<header class="site-header">
 	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
@@ -44,8 +45,32 @@
 						<p><font color="white"><i><strong>{{ user.username }}</strong></i></p></font></center>
 						<hr style="border-color:red;">
 						<a class="nav-item nav-link" href="{% url 'profile' %}">Profile Information</a>
-						<a class="nav-item nav-link" href="{% url 'post-create' %}">Post Announcement</a>						
-						<a class="nav-item nav-link" href="{% url 'logout' %}"><font color="red">Logout</font></a>
+						<a class="nav-item nav-link" href="{% url 'post-create' %}">Post Announcement</a>
+						<a class="nav-item nav-link" href="{% url 'create-new' %}">Update Timeline</a>						
+						<p class="nav-item nav-link" data-toggle="modal" data-target="#exampleModal">
+							<font color="red">
+								&nbsp;&nbsp;&nbsp;&nbsp;Logout
+							</font>
+						</p>
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog modal-dialog-centered" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        Are you sure you want to log out?
+						      </div>
+						      <div class="modal-footer">
+						      	<a href="{% url 'logout' %}" type="button" class="btn btn-danger">Yes</a>
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>	
 						<hr style="border-color:red;">						
 					</div>		
 					<div id="main">
@@ -98,27 +123,27 @@
 <center>
     <footer class="footer">
       <div>
-        <p class="text-muted"><font style="font-family:arial; font-size: 12px;" color="white">Copyright&copy; 2018 Notre Dame of Marbel University | Senior High School Department</font></p>
+        <p class="text-muted"><font style="font-size: 12px;" color="white">Copyright &copy; 2018 Notre Dame of Marbel University | Developed by Kent Jamila</font></p>
       </div>
     </footer>
 </center>
 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
-	function openNav() {
-    	document.getElementById("mySidenav").style.width = "250px";
-    	document.getElementById("main").style.marginLeft = "250px";
-    	document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
 }
 
-	function closeNav() {
-    	document.getElementById("mySidenav").style.width = "0";
-    	document.getElementById("main").style.marginLeft= "0";
-    	document.body.style.backgroundColor = "white";
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
 }
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

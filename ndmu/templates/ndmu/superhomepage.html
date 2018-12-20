@@ -17,7 +17,6 @@
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'ndmu/superhomepage.css' %}">
   </head>
 
@@ -25,12 +24,18 @@
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
-
+               <div class="inner">
+          <h3 class="masthead-brand"></h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="{% url 'new-view' %}">Whats New?</a>
+          </nav>
+        </div>
       </header>
 
       <main role="main" class="inner cover">
         <img src="{% static 'images/ndmu.png' %}" alt="ndmu" class="img-circle">
-        <h1 class="cover-heading">Notre Dame of Marbel University</h1>
+        <h1 class="cover-heading">Welcome to Notre Dame of Marbel University!</h1>
         <p class="lead">You are about to enter the website of Notre Dame of Marbel University Senior High School Department!</p>
         <p class="lead">
           <a href="{% url 'ndmu-home' %}" class="btn btn-lg btn-secondary">Proceed</a>
@@ -43,7 +48,6 @@
         </div>
       </footer>
     </div>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

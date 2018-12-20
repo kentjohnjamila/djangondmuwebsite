@@ -17,6 +17,7 @@
 }
 
 body {
+    /* Center and scale the image nicely */
   background: white;
   color: #333333;
   margin-top: 5rem;
@@ -34,6 +35,10 @@ ul {
 
 .bg-steel {
   background: #0b6623;
+}
+
+.bg-steel2 {
+  background: #0f0f0f;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -75,7 +80,6 @@ a.article-title:hover {
   height: 65px;
   width: 65px;
   margin-right: 16px;
-
 }
 
 .article-metadata {
@@ -177,7 +181,7 @@ html {
 }
 
 :root {
-  --jumbotron-padding-y: 3rem;
+  --jumbotron-padding-y: 1rem;
 }
 
 .jumbotron {
@@ -325,4 +329,21 @@ display: inline;
       box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important; 
   }
 }
+
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+
+.modal-backdrop {
+  z-index: -1;
+}
+
 
