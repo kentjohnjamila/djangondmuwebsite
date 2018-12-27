@@ -1,6 +1,1 @@
-# djangondmuwebsite
-
-crispy forms -
-pillow - 
-ckeditor -
-
+NDMUSHS WS
