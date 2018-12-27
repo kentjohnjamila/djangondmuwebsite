@@ -15,7 +15,7 @@ urlpatterns = [
 	path('whats-new/', views.WNewListView.as_view(), name='new-view'),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('register/', user_views.register, name='register'),
+    #path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
     path('profile/update/', user_views.profileedit, name='updateprofile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),

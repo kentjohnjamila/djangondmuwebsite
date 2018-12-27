@@ -76,19 +76,50 @@ def about(request):
 	return render(request, 'ndmu/about.html')
 
 def history(request):
-	return render(request, 'ndmu/history.html', {'title': 'History'})
+	return render(request, 'ndmu/about/history.html', {'title': 'History'})
 
 def contact(request):
-	return render(request, 'ndmu/contact.html')
+	return render(request, 'ndmu/about/contact.html')
 
 def trustees(request):
-	return render(request, 'ndmu/trustees.html', {'title': 'Board of Trustees'})
+	return render(request, 'ndmu/about/trustees.html', {'title': 'Board of Trustees'})
 
 def administration(request):
-	return render(request, 'ndmu/administration.html', {'title': 'Administration'})
+	return render(request, 'ndmu/about/administration.html', {'title': 'Administration'})
 
 def teachers(request):
-	return render(request, 'ndmu/teachers.html', {'title': 'SHS teachers'})
+	return render(request, 'ndmu/about/teachers.html', {'title': 'SHS teachers'})
+
+def vision(request):
+	return render(request, 'ndmu/about/vision_mission.html', {'title': 'Vision & Mission'})
+
+def objectives(request):
+	return render(request, 'ndmu/about/objectives.html', {'title': 'Objectives'})
+
+def corevalues(request):
+	return render(request, 'ndmu/about/corevalues.html', {'title': 'Core Values'})
+
+def citationsandawards(request):
+	return render(request, 'ndmu/about/citationsandawards.html', {'title': 'Citations & Awards'})
+
+def universitycolors(request):
+	return render(request, 'ndmu/about/universitycolors.html', {'title': 'University Colors'})
+
+def hymn(request):
+	return render(request, 'ndmu/about/hymn.html', {'title': 'University Hymn'})
+
+def seal(request):
+	return render(request, 'ndmu/about/seal.html', {'title': 'University Seal'})
+
+def maristbrothers(request):
+	return render(request, 'ndmu/about/maristbrothers.html', {'title': 'The Marist Brothers'})
+
+def strands(request):
+	return render(request, 'ndmu/about/strands.html', {'title': 'Senior High School Strands'})
+
+def schoolfacilities(request):
+	return render(request, 'ndmu/about/schoolfacilities.html', {'title': 'School Facilities'})
+
 ####################################################################
 #home
 def home(request):

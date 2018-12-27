@@ -43,7 +43,7 @@
 						<br>
 						<center><img class="rounded-circle mb-2" src="{{ user.profile.image.url }}" height="50" width="50">
 						<p><font color="white"><i><strong>{{ user.username }}</strong></i></p></font></center>
-						<hr style="border-color:red;">
+						<hr style="border-color:grey;">
 						<a class="nav-item nav-link" href="{% url 'profile' %}">Profile Information</a>
 						<a class="nav-item nav-link" href="{% url 'post-create' %}">Post Announcement</a>
 						<a class="nav-item nav-link" href="{% url 'create-new' %}">Update Timeline</a>						
@@ -71,7 +71,7 @@
 						    </div>
 						  </div>
 						</div>	
-						<hr style="border-color:red;">						
+						<hr style="border-color:grey;">						
 					</div>		
 					<div id="main">
 						{% if user.is_authenticated %}
@@ -88,8 +88,7 @@
 	          <a class="nav-item nav-link" href="{% url 'ndmu-home' %}">Home</a>	        	
 	          <a class="nav-item nav-link" href="{% url 'ndmu-about' %}">About</a>
 	          <a class="nav-item nav-link" href="{% url 'ndmu-announcements' %}">Announcements</a>
-	          <a class="nav-item nav-link" href="{% url 'ndmu-contact' %}">Contact Us</a>	 
-	          <a class="nav-item nav-link" href="{% url 'ndmu-teachers' %}">SHS-Teachers</a>	     	                   	         
+	          <a class="nav-item nav-link" href="{% url 'ndmu-contact' %}">Contact Us</a>	 	     	                   	         
 	        </div>
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav">
@@ -123,7 +122,7 @@
 <center>
     <footer class="footer">
       <div>
-        <p class="text-muted"><font style="font-size: 12px;" color="white">Copyright &copy; 2018 Notre Dame of Marbel University | Developed by Kent Jamila</font></p>
+        <p class="text-muted"><font style="font-size: 12px;" color="white">Copyright &copy; 2019 Notre Dame of Marbel University | Developed by Kent Jamila</font></p>
       </div>
     </footer>
 </center>

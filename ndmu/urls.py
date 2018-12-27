@@ -16,6 +16,17 @@ urlpatterns = [
 	path('about/contact/', views.contact, name='ndmu-contact'),
 	path('about/board-of-trustees/', views.trustees, name='ndmu-trustees'),
 	path('about/administration/', views.administration, name='ndmu-administration'),
+	path('about/vision-mission/', views.vision, name='ndmu-vision'),
+	path('about/objectives/', views.objectives, name='ndmu-objectives'),
+	path('about/core-values/', views.corevalues, name='ndmu-corevalues'),
+	path('about/citation-and-awards/', views.citationsandawards, name='ndmu-citation'),
+	path('about/core-values/', views.corevalues, name='ndmu-corevalues'),
+	path('about/university-colors/', views.universitycolors, name='ndmu-colors'),
+	path('about/university-hymn/', views.hymn, name='ndmu-hymn'),	
+	path('about/university-seal/', views.seal, name='ndmu-seal'),
+	path('about/marist-brothers/', views.maristbrothers, name='ndmu-brothers'),
+	path('about/shs-strands/', views.strands, name='ndmu-strands'),
+	path('about/school-facilities/', views.schoolfacilities, name='ndmu-facilities'),
     #########################################################################
     #announcements tab
 	path('announcements/post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
