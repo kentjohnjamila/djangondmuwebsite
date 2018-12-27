@@ -1,5 +1,7 @@
 {% extends "ndmu/base.html" %}
 {% block content %}
+
+
 </style>
 <hr class="featurette-divider">
       <section class="jumbotron text-center">
@@ -13,9 +15,9 @@
 
 	{% for post in posts %}
 	<article class="media content-section">
-		<img class="media-object article-img rounded-circle" src="{{ post.author.profile.image.url }}">
+		<img class="media-object article-img rounded" src="{{ post.author.profile.image.url }}">
 		<div class="media-body">
-		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}"><strong><font style="font-family: monsterratimport;">{{ post.title | safe }}</font></strong></a></h4>  	
+		  <h4><a class="article-title" href="{% url 'post-detail' post.id %}"><strong><font style="font-family: monsterratimport;">{{ post.title | safe }}</font></strong></a></h4>
 		  <!--p class="article-content">{{ post.content | safe }}</p>-->
 		  <div class="article">
 			<a class="mr-2" href="{% url 'user-posts' post.author.username %}"><font color="red" style="font-family: monsterratimport;">{{ post.author }}</font></a>		

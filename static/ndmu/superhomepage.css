@@ -27,12 +27,13 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url(background.jpg);
+  background-image: url(images/background.jpg);
 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     
 }
 

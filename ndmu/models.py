@@ -6,8 +6,9 @@ from PIL import Image
 from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post(models.Model):
-    title = RichTextUploadingField(max_length=100, blank=True, config_name='title_editor')
-    content = RichTextUploadingField(default="")    
+    #title = RichTextUploadingField(max_length=100, blank=True, config_name='title_editor')
+    title = models.CharField(max_length=100, blank=True)
+    content = RichTextUploadingField(default="")   
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     imgs = models.ImageField(upload_to='imgs/%Y/%m/%d/', max_length=255, null=True, blank=True)

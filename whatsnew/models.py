@@ -6,7 +6,8 @@ from PIL import Image
 from ckeditor_uploader.fields import RichTextUploadingField
 
 class Whatsnew(models.Model):
-    whatsnew_title = RichTextUploadingField(max_length=100, blank=True, config_name='title_editor')
+    #whatsnew_title = RichTextUploadingField(max_length=100, blank=True, config_name='title_editor')
+    whatsnew_title = models.CharField(max_length=100, blank=True)
     whatsnew = RichTextUploadingField(default="")
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     new_imgs = models.ImageField(upload_to='imgs/%Y/%m/%d/', max_length=255, null=True, blank=True)

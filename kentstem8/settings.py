@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     'users.apps.UsersConfig',
     'ndmu.apps.NDMUConfig',
     'crispy_forms',
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'whatsnew',
+    'precise_bbcode',
 ]
 
 WSGI_APPLICATION = 'kentstem8.wsgi.application'
@@ -58,11 +59,30 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Custom',
         'width': 1060,
         'height': 500,
+        'extraPlugins': ','.join(['image2', 'justify', 'tableresize', ]),        
         'toolbar_Custom': [
             ['Bold', 'Italic','Underline',], ['TextColor', 'BGColor', 'FontSize', 'Font'], ['Link', 'Unlink'],
-            ['JustifyLeft', 'JustifyCenter', 'JustifyRight'], ['NumberedList', 'BulletedList'], ['Smiley', 'Image',
-            'Outdent', 'Indent', 'Source'], ['Undo', 'Redo'],
+            ['JustifyBlock', 'JustifyLeft', 'JustifyCenter', 'JustifyRight'], ['NumberedList', 'BulletedList', 'Table'], ['Smiley', 'Image',
+            'Outdent', 'Indent', 'Source'], ['Undo', 'Redo', 'Preview', 'EqnEditor'],
         ],
+        'image_previewText': 'Insert Image',
+        'smiley_path': '/static/ckeditor smiley/smiley/images/',
+        'smiley_images': [
+        'regular_smile.png','sad_smile.png','wink_smile.png','teeth_smile.png','confused_smile.png','tongue_smile.png',
+        'embarrassed_smile.png','omg_smile.png','whatchutalkingabout_smile.png','angry_smile.png','angel_smile.png','shades_smile.png',
+        'devil_smile.png','cry_smile.png','lightbulb.png','thumbs_down.png','thumbs_up.png','heart.png',
+        'broken_heart.png','kiss.png','envelope.png', 'ndmu.png', 'embarassed.png', '002-sad-14.png', '003-rich-1.png',
+        '004-surprised-1.png', '005-vomit.png', '006-laughing-3.png', '007-angry-4.png', '008-silent.png', '009-surprised.png',
+        '010-favorite.png', '011-suspicious.png', '012-sick-3.png', '013-liar.png', '014-dribble.png', '015-laughing-2.png',
+        '016-sick-2.png', '017-clown.png', '018-cowboy.png', '019-happy-7.png', '020-robot.png', '021-injured.png', '022-thinking-1.png',
+        '023-nerd.png', '024-sick-1.png', '025-rich.png', '026-secret.png', '027-monkey-2.png', '028-monkey-1.png', '029-monkey.png',
+        '030-thinking.png', '031-happy-6.png', '032-happy-5.png', '033-sad-13.png', '034-cat-8.png', '035-cat-7.png', '036-cat-6.png',
+        '037-cat-5.png', '038-cat-4.png', '039-cat-3.png', '040-cat-2.png', '041-cat-1.png', '042-cat.png', '043-sick.png', '044-muted.png',
+        '045-shocked-6.png', '046-sleeping-1.png', '047-embarrassed-3.png', '048-shocked-5.png', '049-shocked-4.png', '050-embarrassed-2.png',
+        '051-shocked-3.png', '052-shocked-2.png', '053-crying-2.png', '054-shocked-1.png', '055-sad-12.png', '056-sad-11.png', '057-sad-10.png',
+        '058-sad-9.png', '059-sad-8.png', '060-sad-7.png'
+        ],
+        'smiley_columns': '5',
     },
     'title_editor': {
         'toolbar': 'Title',

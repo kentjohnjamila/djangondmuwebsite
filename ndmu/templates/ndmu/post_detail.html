@@ -1,14 +1,15 @@
 {% extends "ndmu/base.html" %}
+{% load bbcode_tags %}
+{% bbcode entry.bbcode_content %}
 {% block content %}
 <br>
 	<article class="media content-section">
-		<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+		<img class="rounded article-img" src="{{ object.author.profile.image.url }}">
 		<div class="media-body">
 		  <div class="article-metadata">
 			<a class="mr-2" href="{% url 'user-posts' object.author.username %}"><font color="red">{{ object.author }}</font></a>
-			<small class="text-muted">{{ object.date_posted|date:"M. j, Y - fA" }}</small>
+			<small class="text-muted">{{ object.date_posted|date:"M. j, Y - fA" }}&nbsp; <i>"{{ object.title }}"</i></small>
 		  </div>
-		  <h2><a class="article-title"><strong><center>{{ object.title | safe }}</center></strong></h2>
 		  {% if post.picture %}		  
 		  <img src={{object.image_content.url}}/>
 		  {% endif %}		  	

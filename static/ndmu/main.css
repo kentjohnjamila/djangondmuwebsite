@@ -34,15 +34,26 @@ ul {
 }
 
 .bg-steel {
-  background: #0b6623;
+  background: #0f0f0f;
+  width: 100%;
+}
+
+/*
+#0b6623 - green
+*/
+
+.bg-steel2 {
+  background: #0f0f0f;
 }
 
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
+
 }
 
 .site-header .navbar-nav .nav-link:hover {
   color: #ffffff;
+
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -76,7 +87,6 @@ a.article-title:hover {
   height: 65px;
   width: 65px;
   margin-right: 16px;
-
 }
 
 .article-metadata {
@@ -118,7 +128,7 @@ a.article-title:hover {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #0f0f0f;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -134,7 +144,7 @@ a.article-title:hover {
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: red;
 }
 
 .sidenav .closebtn {
@@ -170,7 +180,7 @@ html {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #0b6623;
+  background-color: #0f0f0f;
 }
 
 .text-muted {
